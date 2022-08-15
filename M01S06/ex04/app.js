@@ -15,4 +15,11 @@
       document.body.append(p);
     });
   });
+  function showMessage(message) {
+    const paragraphElement = document.createElement('p');
+    paragraphElement.innerText = message;
+    paragraphElement.classList.add('message');
+
+    document.body.append(paragraphElement);
+  }
 })();
