@@ -1,38 +1,15 @@
-class DigitalClock {
-  constructor(element) {
-    this.element = element;
-  }
-
-  start() {
-    this.update();
-
-    setInterval(() => {
-      this.update();
-    }, 500);
-  }
-
-  update() {
-    const parts = this.getTimeParts();
-    const minuteFormatted = parts.minute.toString().padStart(2, '0');
-    const timeFormatted = `${parts.hour}:${minuteFormatted}`;
-    const amPm = parts.isAm ? 'AM' : 'PM';
-
-    this.element.querySelector('.clock-time').textContent = timeFormatted;
-    this.element.querySelector('.clock-ampm').textContent = amPm;
-  }
-
-  getTimeParts() {
-    const now = new Date();
-
-    return {
-      hour: now.getHours() % 12 || 12,
-      minute: now.getMinutes(),
-      isAm: now.getHours() < 12,
-    };
-  }
-}
-
-const clockElement = document.querySelector('.clock');
-const clockObject = new DigitalClock(clockElement);
-
-clockObject.start();
+let hour = document.getElementById('hour');
+let minute = document.getElementById('minute');
+let seconds = document.getElementById('seconds');
+let set_clock = setInterval(() => {
+  let date_now = new Date();
+  let hr = date_now.getHours();
+  let min = date_now.getMinutes();
+  let sec = date_now.getSeconds();
+  let calc_hr = hr * 30 + min / 2;
+  let calc_min = min * 6 + sec / 10;
+  let calc_sec = sec * 6;
+  hour.style.transform = `rotate(${calc_hr}deg)`;
+  minute.style.transform = `rotate(${calc_min}deg)`;
+  seconds.style.transform = `rotate(${calc_sec}deg)`;
+}, 1000);

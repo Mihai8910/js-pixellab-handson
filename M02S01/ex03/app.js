@@ -19,3 +19,9 @@ var Car = {
     this.displaySpeed();
   },
 };
+
+const audi = Object.create(Car);
+audi.make = 'Audi';
+audi.color = 'black';
+audi.wheels = 4;
+audi.speed = 0;
