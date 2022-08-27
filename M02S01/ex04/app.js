@@ -74,5 +74,4 @@ const car01 = new Car(250, 16, 'red');
 car01.render();
 const car02 = new Car(16, 250, 'blue');
 car02.render();
-const car03 = new Car(16, 16, 'teal');
-car03.render().turnLightOn();
+const car03 = new Car(16, 16, 'teal').render().turnLightOn();
