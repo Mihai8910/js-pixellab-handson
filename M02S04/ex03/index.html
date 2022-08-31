@@ -42,7 +42,7 @@
       height: 45px;
       background-color: #000;
       position: absolute;
-      transition: left 0.2s linear;
+      transition: left 0.2s linear, top 0.2s linear;
     }
 
   </style>
@@ -56,14 +56,18 @@
 
   <div class="controls">
     <div class="row">
-      <button>⬆️</button>
+      <button data-direction="NW">a</button>
+      <button data-direction="N">⬆️</button>
+      <button data-direction="NE">b</button>
     </div>
     <div class="row">
-      <button>⬅️</button> &nbsp; &nbsp;
-      <button>➡️</button>
+      <button data-direction="W">⬅️</button> &nbsp; &nbsp;
+      <button data-direction="E">➡️</button>
     </div>
     <div class="row">
-      <button>⬇️</button>
+      <button data-direction="SW">a</button>
+      <button data-direction="S">⬇️</button>
+      <button data-direction="SE">b</button>
     </div>
   </div>
 
